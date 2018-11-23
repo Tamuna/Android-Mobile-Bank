@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">mBank</string>
+    <string name="hint_password">პაროლი</string>
+    <string name="hint_user">მომხმარებელი</string>
+    <string name="button_login">შესვლა</string>
+    <string name="ourcome">გასავალი</string>
+    <string name="income">შემოსავალი</string>
+    <array name="tab_names">
+        <item>პროფილი</item>
+        <item>აქტივები</item>
+        <item>გადახდების ისტორია</item>
+        <item>ბარათები</item>
+    </array>
+</resources>
