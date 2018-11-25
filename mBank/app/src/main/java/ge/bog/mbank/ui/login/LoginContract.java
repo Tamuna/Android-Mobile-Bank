@@ -1,21 +1,27 @@
 package ge.bog.mbank.ui.login;
 
+import ge.bog.mbank.exceptions.ValidationException;
+
 public interface LoginContract {
-    interface LoginView{
-        void validateInputs();
+    interface LoginView {
+        void validateInputs(String username, String password) throws ValidationException;
+
         void redirectToMain();
+
         void unsuccessfulLogin();
     }
 
-    interface LoginPresenter{
+    interface LoginPresenter {
         void tryLogin(String username, String password);
     }
 
-    interface LoginInteractor{
+    interface LoginInteractor {
         interface OnFinishListener {
-            void onFinished();
+            void onFinished(String sessionId);
+
             void onFailure(Throwable t);
         }
-        boolean isAuthorised();
+
+        void authenticate(OnFinishListener onFinishListener, String username, String password);
     }
 }

@@ -5,10 +5,34 @@
     <string name="button_login">შესვლა</string>
     <string name="ourcome">გასავალი</string>
     <string name="income">შემოსავალი</string>
-    <array name="tab_names">
+    <string name="name">სახელი:</string>
+    <string name="lastname">გვარი:</string>
+    <string name="sex">სქესი:</string>
+    <string name="birthdate">დაბადების თარიღი:</string>
+    <string name="client_category">კლიენტის კატეგორია:</string>
+    <string name="phone">ტელეფონი:</string>
+    <string name="address">მისამართი:</string>
+    <string name="email">ელფოსტა:</string>
+    <string-array name="tab_names">
         <item>პროფილი</item>
         <item>აქტივები</item>
         <item>გადახდების ისტორია</item>
         <item>ბარათები</item>
-    </array>
+    </string-array>
+    <string name="male">მამრობითი</string>
+    <string name="female">მდედრობითი</string>
+    <string name="today">დღეს</string>
+    <string name="yesterday">გუშინ</string>
+    <string name="gel">ლარი</string>
+    <string name="personal">პირადი</string>
+    <string name="assets">აქტივები</string>
+    <string name="available_amount">ხელმისაწვდომი თანხა</string>
+    <string name="liabilities">ვალდებულებები</string>
+    <string name="points">ბონუს ქულები</string>
+    <string name="prompt_valid_thru">valid thru</string>
+    <string name="user_apply">გთხოვთ,</string>
+    <string name="empty_fields_prompt">შეავსოთ ყველა ველი</string>
+    <string name="short_inputs_prompt">თვითოეულ ველში შეიყვანოთ მინიმუმ სამი სიმიბოლო</string>
+    <string name="and_string">და</string>
+    <string name="not_registered_error">არ ხართ დარეგისტრირებული</string>
 </resources>

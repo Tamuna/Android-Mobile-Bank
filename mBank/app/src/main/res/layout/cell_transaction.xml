@@ -4,72 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/img_ccy"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:background="@drawable/circle"
-        android:padding="20dp"
+        android:foregroundGravity="center"
+        android:padding="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lari" />
 
     <TextView
-        android:id="@+id/txt_pay_date"
+        android:id="@+id/transaction_tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_pay_destination"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/transaction_tv_destination"
         app:layout_constraintStart_toEndOf="@id/img_ccy"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:text="გუშინ" />
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="guSin" />
 
     <TextView
-        android:id="@+id/txt_pay_destination"
+        android:id="@+id/transaction_tv_destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_pay_type"
+        app:layout_constraintBottom_toTopOf="@+id/transaction_tv_type"
         app:layout_constraintStart_toEndOf="@id/img_ccy"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pay_date"
-        tools:text="ფრაგოლა" />
+        app:layout_constraintTop_toBottomOf="@+id/transaction_tv_date"
+        tools:text="Fragonla" />
 
     <TextView
-        android:id="@+id/txt_pay_type"
+        android:id="@+id/transaction_tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/img_ccy"
-        app:layout_constraintTop_toBottomOf="@+id/txt_pay_destination"
-        tools:text="გადახდა" />
+
+        app:layout_constraintTop_toBottomOf="@+id/transaction_tv_destination"
+        tools:text="afa" />
 
     <TextView
-        android:id="@+id/pay_amount"
+        android:id="@+id/transaction_tv_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_pay_destination"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="-3 ლარი" />
+        app:layout_constraintStart_toEndOf="@+id/transaction_tv_destination"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
