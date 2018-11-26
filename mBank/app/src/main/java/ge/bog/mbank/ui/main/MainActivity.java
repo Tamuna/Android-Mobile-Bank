@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPagerAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private static int DAY_LIMIT = 6;
+    private static int EVENING_LIMIT = 18;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private void setPeriodicBackground() {
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
-        if (timeOfDay > 6 && timeOfDay < 18)
+        if (timeOfDay > DAY_LIMIT && timeOfDay < EVENING_LIMIT)
             viewPager.setBackgroundResource(R.drawable.ic_day_bg);
         else
             viewPager.setBackgroundResource(R.drawable.ic_evening_bg);
