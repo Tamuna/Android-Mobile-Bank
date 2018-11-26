@@ -4,8 +4,6 @@ import ge.bog.mbank.exceptions.ValidationException;
 
 public interface LoginContract {
     interface LoginView {
-        void validateInputs(String username, String password) throws ValidationException;
-
         void redirectToMain();
 
         void unsuccessfulLogin();
@@ -13,6 +11,8 @@ public interface LoginContract {
 
     interface LoginPresenter {
         void tryLogin(String username, String password);
+
+        void validateInputs(String username, String password, LoginActivity context) throws ValidationException;
     }
 
     interface LoginInteractor {
@@ -23,5 +23,6 @@ public interface LoginContract {
         }
 
         void authenticate(OnFinishListener onFinishListener, String username, String password);
+        void validateLogin(String username, String password, LoginActivity context) throws ValidationException;
     }
 }

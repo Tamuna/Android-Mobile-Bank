@@ -1,5 +1,7 @@
 package ge.bog.mbank.ui.login;
 
+import ge.bog.mbank.R;
+import ge.bog.mbank.exceptions.ValidationException;
 import ge.bog.mbank.network.RequestInterceptor;
 
 /**
@@ -8,6 +10,7 @@ import ge.bog.mbank.network.RequestInterceptor;
 public class LoginPresenterImpl implements LoginContract.LoginPresenter {
     private LoginContract.LoginView loginView;
     private LoginContract.LoginInteractor loginInteractor;
+
 
     public LoginPresenterImpl(LoginContract.LoginView loginView, LoginContract.LoginInteractor loginInteractor) {
         this.loginView = loginView;
@@ -19,9 +22,13 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter {
         loginInteractor.authenticate(new OnFinishListenerImpl(), username, password);
     }
 
+    @Override
+    public void validateInputs(String username, String password, LoginActivity context) throws ValidationException {
+        loginInteractor.validateLogin(username, password, context);
+    }
+
 
     public class OnFinishListenerImpl implements LoginContract.LoginInteractor.OnFinishListener {
-
         @Override
         public void onFinished(String sessionId) {
             if (sessionId != null) {

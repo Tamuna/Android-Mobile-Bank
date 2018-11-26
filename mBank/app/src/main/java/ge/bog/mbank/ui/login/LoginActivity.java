@@ -18,7 +18,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     private TextInputEditText tiUsername;
     private TextInputEditText tiPassword;
     private Button btnLogin;
-    private static final int MIN_INPUT_LEN = 3;
 
     private LoginContract.LoginPresenter presenter;
 
@@ -36,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
             @Override
             public void onClick(View v) {
                 try {
-                    validateInputs(tiUsername.getText().toString(), tiPassword.getText().toString());
+                    presenter.validateInputs(tiUsername.getText().toString(), tiPassword.getText().toString(), LoginActivity.this);
                     presenter.tryLogin(tiUsername.getText().toString(), tiPassword.getText().toString());
                 } catch (ValidationException e) {
                     Toast invalidLogin = Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG);
@@ -46,33 +45,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
         });
     }
 
-    @Override
-    public void validateInputs(String username, String password) throws ValidationException {
-        String userApply = this.getResources().getString(R.string.user_apply);
-        String emptyInputs = " " + this.getResources().getString(R.string.empty_fields_prompt);
-        String shortInputs = " " + this.getResources().getString(R.string.short_inputs_prompt);
-        String and = " " + this.getResources().getString(R.string.and_string);
-
-        boolean valid = true;
-        ValidationException e = new ValidationException();
-
-        if (username.length() == 0 || password.length() == 0) {
-            e.appendErrorMessage(userApply);
-            e.appendErrorMessage(emptyInputs);
-            valid = false;
-        }
-        if ((username.length() < MIN_INPUT_LEN && username.length() > 0)
-                || (password.length() < MIN_INPUT_LEN && password.length() > 0)) {
-            if (!valid)
-                e.appendErrorMessage(and);
-            else
-                e.appendErrorMessage(userApply);
-            e.appendErrorMessage(shortInputs);
-            valid = false;
-        }
-        if (!valid)
-            throw e;
-    }
 
     @Override
     public void redirectToMain() {
