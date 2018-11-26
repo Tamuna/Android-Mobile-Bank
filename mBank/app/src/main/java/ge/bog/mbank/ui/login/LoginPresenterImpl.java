@@ -25,7 +25,7 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter {
         @Override
         public void onFinished(String sessionId) {
             if (sessionId != null) {
-                RequestInterceptor.sessionId = sessionId;
+                RequestInterceptor.setSessionId(sessionId);
                 loginView.redirectToMain();
             } else {
                 loginView.unsuccessfulLogin();

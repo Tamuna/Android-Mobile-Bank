@@ -11,7 +11,7 @@ import okhttp3.Response;
  * created by tamuna
  */
 public class RequestInterceptor implements Interceptor {
-    public static String sessionId = "";
+    private static String sessionId = "";
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -23,5 +23,9 @@ public class RequestInterceptor implements Interceptor {
         Response response = chain.proceed(request);
 
         return response;
+    }
+
+    public static void setSessionId(String s) {
+        sessionId = s;
     }
 }

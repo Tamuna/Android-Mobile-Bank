@@ -32,7 +32,7 @@ public class TransactionViewHolder extends RecyclerView.ViewHolder {
 
     public void setData(Transaction transaction) {
         String sign = "-";
-        if (transaction.getEntryGroupName() == INCOME)
+        if (transaction.getEntryGroupName().equals(INCOME))
             sign = "+";
         tvTransactionAmount.setText(String.format("%s%s %s", sign, transaction.getAmount(), itemView.getContext().getResources().getString(R.string.gel)));
         String destination = transaction.getMerchantName();
